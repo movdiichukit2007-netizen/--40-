@@ -1,0 +1,40 @@
+@PostService_HostAddress = http://localhost:5000
+
+### Отримати всі відправлення
+GET {{PostService_HostAddress}}/api/postings
+
+### Отримати відправлення за Id
+GET {{PostService_HostAddress}}/api/postings/1
+
+### Створити нове відправлення (Standard)
+POST {{PostService_HostAddress}}/api/postings
+Content-Type: application/json
+
+{
+  "description": "Посилка з книгами",
+  "weightKg": 2.5,
+  "deliveryType": 1
+}
+
+### Створити нове відправлення (Express)
+POST {{PostService_HostAddress}}/api/postings
+Content-Type: application/json
+
+{
+  "description": "Термінова посилка",
+  "weightKg": 1,
+  "deliveryType": 2
+}
+
+### Оновити відправлення
+PUT {{PostService_HostAddress}}/api/postings/1
+Content-Type: application/json
+
+{
+  "description": "Посилка з книгами (оновлено)",
+  "weightKg": 3,
+  "deliveryType": 3
+}
+
+### Видалити відправлення
+DELETE {{PostService_HostAddress}}/api/postings/1
